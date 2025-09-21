@@ -1,34 +1,44 @@
-import React from 'react'
+import React from "react";
 
-const VipInfo = ({ items }) => {
+const VipInfo = ({ items = [] }) => {
+  if (!Array.isArray(items) || !items.length) return null;
+
   return (
-    <div className="row mt-3 text-center">
-      {items && items.length > 0 ? (
-        items.map((item) => (
-          <div key={item.id} className="col-md-4 mb-4">
-            <img
-              src={item.image}
-              alt={item.name}
-              className="img-fluid rounded shadow w-75"
-            />
-            <h4 className="mt-2">{item.name}</h4>
-            <div>Worth: {item.worth}</div>
-            <div>Birth Year: {item.birth_year}</div>
-            <div>Source: {item.source}</div>
-            <div>Country: {item.country}</div>
-          </div>
-        ))
-      ) : (
-        <div
-          style={{ width: '5rem', height: '5rem' }}
-          className="spinner-border text-primary mx-auto"
-          role="status"
-        >
-          <span className="sr-only"></span>
-        </div>
-      )}
-    </div>
-  )
-}
+    <div className="row row-cols-1 row-cols-lg-2 g-4 mt-3">
+      {items.map((p) => (
+        <div className="col" key={p.id}>
+          <div className="card h-100 shadow-sm">
+            <div className="row g-0 h-100">
+           
+              <div className="col-md-8 d-flex flex-column p-3">
+                <h5 className="card-title fs-3 fw-bold">{p.name}</h5>
+                <p className="card-text mb-1">
+                  <strong>Money:</strong> {p.worth}
+                </p>
+                <p className="card-text mb-1">
+                  <strong>Company:</strong> {p.source}
+                </p>
+                <p className="card-text text-muted mb-0">
+                  <small>
+                    Country: {p.country} • Born: {p.birth_year}
+                  </small>
+                </p>
+              </div>
 
-export default VipInfo
+             
+              <div className="col-md-4 d-flex align-items-center">
+                <img
+                  src={p.image}
+                  alt={p.name}
+                  className="img-fluid rounded-end"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+      ))}
+    </div>
+  );
+};
+
+export default VipInfo;

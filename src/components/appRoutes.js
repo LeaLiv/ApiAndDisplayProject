@@ -30,8 +30,8 @@ const AppRoutes = () => {
                     <Link to="/about">About</Link> | 
                     <Link to="/counter">Counter</Link> | 
                     <Link to="/counter2">Counter2</Link> | 
-                    <Link to="/atlas">Atlas</Link> | 
-                    <Link to="/pixa/cats">Pixa</Link>
+                    <Link to="/atlas">Atlas</Link> |
+                    <Link to="/pixa/cats">Pixa</Link> |
                     <Link to="/vip">Vip</Link>
                 </header>
                 <Routes>

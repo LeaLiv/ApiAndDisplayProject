@@ -24,7 +24,7 @@ const AppVip = () => {
 
     return (
         <div className="container">
-            <h2>AppPixa</h2>
+            <h2>AppVip</h2>
             <VipInfo items={infoItems} ></VipInfo>
         </div>
     )
